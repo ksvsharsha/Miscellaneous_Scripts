@@ -66,7 +66,7 @@ class License_Checker:
                             error_msg = 'Brackets-() are not allowed when licenses are separated by &'
 
                         elif '|' in each_str and ('(' not in each_str and ')' not in each_str):
-                            print('Brackets () not present in | separator')
+                            print('Brackets () not present in| separator')
                             error_msg = 'Brackets should be enclosed at both ends for pipe(|) separator'
 
                         elif ('&' in each_str or '|' not in each_str) and ('(' not in each_str and ')' not in each_str):
