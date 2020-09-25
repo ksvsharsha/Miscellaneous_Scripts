@@ -49,12 +49,17 @@ class License_Checker:
                 if is_csv:
                     csv_tsv_reader_file = reader(read_obj_input_file)
                     csv_tsv_writer_file = writer(write_obj_output_file)
+                    header_row = ['Input', 'Output', 'License_Checker_Message', 'Failure Location']
+                    csv_tsv_writer_file.writerow(header_row)
                 else:
                     csv_tsv_reader_file = reader(read_obj_input_file, '\t')
                     csv_tsv_writer_file = writer(write_obj_output_file, '\t')
+                    header_row = ['Input_Old_Format', 'Input_Old_Format', 'License_Checker_Message', 'Failure Location']
+                    csv_tsv_writer_file.writerow(header_row)
 
                 for each_input in csv_tsv_reader_file:
                     error_msg = 'Valid License'
+                    error_location = ''
                     licenses_list = []
                     licenses_list_unsorted = []
                     str_list = re.split(r'(.*?)(\(.*?\))', each_input[int(input_row_no)-1])
@@ -64,10 +69,19 @@ class License_Checker:
                         if '&' in each_str and ('(' in each_str or ')' in each_str):
                             print('Brackets () present in & separators')
                             error_msg = 'Brackets-() are not allowed when licenses are separated by &'
+                            error_location = each_str
+                            break
 
-                        elif '|' in each_str and ('(' not in each_str and ')' not in each_str):
+                        elif '|' in each_str and ('(' not in each_str or ')' not in each_str):
                             print('Brackets () not present in| separator')
                             error_msg = 'Brackets should be enclosed at both ends for pipe(|) separator'
+                            error_location = each_str
+                            break
+
+                        elif each_str.count('(') > 1 or each_str.count(')') > 1:
+                            error_msg = 'More than one brace present either at the starting or ending'
+                            error_location = each_str
+                            break
 
                         elif ('&' in each_str or '|' not in each_str) and ('(' not in each_str and ')' not in each_str):
                             licenses_and = list(filter(None, each_str.split('&')))
@@ -80,16 +94,22 @@ class License_Checker:
                                 else:
                                     error_msg = 'License not present in License List'
                                     print('License not present in Approved License List')
+                                    error_location = elem
+                                    break
+
                             licenses_and_without_chars_unsorted.extend(licenses_and_without_chars)
                             licenses_and_without_chars.sort()
 
                             if licenses_and_without_chars != licenses_and_without_chars_unsorted:
                                 print('Inner and list not sorted')
                                 error_msg = 'Alphabetical order not followed'
+                                error_location = each_str
+                                break
                             else:
                                 licenses_list.extend(licenses_and_without_chars_unsorted)
 
                         elif ('|' in each_str or '&' not in each_str) and ('(' in each_str and ')' in each_str):
+
                             licenses_or = each_str.replace('(', '').replace(')', '').split('|')
                             licenses_or_without_chars = []
                             licenses_or_without_chars_unsorted = []
@@ -100,12 +120,17 @@ class License_Checker:
                                 else:
                                     error_msg = 'License not present in Approved License List'
                                     print('License not present in Approved License List')
+                                    error_location = elem
+                                    break
+
                             licenses_or_without_chars_unsorted.extend(licenses_or_without_chars)
                             licenses_or_without_chars.sort()
 
                             if licenses_or_without_chars != licenses_or_without_chars_unsorted:
                                 error_msg = 'Alphabetical order not followed'
                                 print('Alphabetical order not followed')
+                                error_location = each_str
+                                break
                             else:
                                 licenses_list.extend(licenses_or_without_chars_unsorted)
 
@@ -115,10 +140,12 @@ class License_Checker:
                     if licenses_list != licenses_list_unsorted:
                         print('Alphabetical order not followed')
                         error_msg = 'Alphabetical order not followed'
+                        error_location = each_input[int(input_row_no)-1]
 
                     output_row = []
                     output_row.extend(each_input)
                     output_row.append(error_msg)
+                    output_row.append(error_location)
                     csv_tsv_writer_file.writerow(output_row)
 
                 read_obj_input_file.close()

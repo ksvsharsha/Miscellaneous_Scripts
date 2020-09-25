@@ -1,36 +1,37 @@
-"""CPAL""",CPALUNSPECIFIED,License not present in License List
-"""Creative Common attribnution-Noncommercial-Share Alike license""",CC-BY-NC-SA-UNSPCIFIED,License not present in License List
-"""Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License""",CC-BY-NC-SA-4.1,License not present in License List
-"""Creative Commons BY 3.0""",CC-BY-30,License not present in License List
-"""D892FC""",Nonsensical-ClausE,License not present in License List
-"""Default license AGPL and TriaClick Open Source License Agreement""","AGPL-UNSPECIFIED,UNKNOWN",License not present in License List
-"""Distributed under terms of the AGPL license.""",AGPLUNSPECIFIED,License not present in License List
-"""Dual: Commercial or AGPL""",(AGPL-UNSPECIFIED-COMMERCIAL),License not present in License List
-"""dual-licensed, under the Universal Permissive License (UPL) and Apache License 2.0""",Apache-2.0-UPL-UNSPECIFIED,License not present in License List
-"""FTL/LGPL v2.1+""","(FTL,LGPL2.1+)",License not present in License List
-"""GNU GENERAL PUBLIC LICENSE, see LICENCE""",GPL-UNSPECIFIED|See-License-Clause),
-"""GNU General Public License v3 (GPLv3) on top the license of Python.""",{GPL-3.0&Python-UNSPECIFIED),Brackets () present in & separators
-"""GNU General Public License v3 (LGPLv3)""","GPL-3.0&,LGPL-3.0",License not present in License List
-"""GNU General Public License version 3 or later, Apache License Version 2""",(Apache-2.0&GPL-3.0+),Brackets () present in & separators
-"""GNU_GPL licence, see LICENCE.txt""",(GPL-UNSPECIFIED-See-License-Clause),License not present in License List
-"""GNU GPL; see LICENSE""",GPL-UNSPECIFIED|See-License-Clause,Brackets () not present in | separator
-"""GNU GPLv3 or posterior""",(GPL-3.0--UNKNOWN),License not present in License List
-"""GNU(https://www.gnu.org/licenses/lgpl-2.1.txt)""","LGPL-2.1,",License not present in License List
-"""GNU LESSER GENERAL PUBLIC LICENSE v3, see LICENSE file""",LGPL-3.0&See-LicenseClause,License not present in License List
-"""GPL-2.0-only OR LGPL-2.0-or-later""",(GPL-2.0-LGPL-2.0+),License not present in License List
-"""GPL-2.0-only OR LGPL-2.1-or-later""",(GPL-2.0&LGPL-2.1+),Brackets () present in & separators
-"""GPL2,GPL3,Commercial""",COMMERCIAL&GPL-2.0|GPL-3.0,Brackets () not present in | separator
-"""GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0""",GPL-3.0+&Apache-2.0&CC0-1.0&CC-BY-SA-4.0,Inner and list not sorted
-"""['GPL3', 'LGPL']""",LGPL-UNSPECIFIED&GPL-3.0,Inner and list not sorted
-"""GPL,MIT,BSD""",(BSD-UNSPECIFIED&GPL-UNSPECIFIED&MIT,Brackets () present in & separators
-"""GPL/Proprietary""",(GPL-UNSPECIFIED|Proprietary-Clause,
-"""GPL -  see LICENSE""",GPL-UNSPECIFIED\See-License-Clause,License not present in License List
-"""GPL see LICENSE""",GPL-UNSPECIFIEDSee-License-Clause,License not present in License List
-"""GPLv2 (Only)/BSD (2 Clause)""",(BSD-2-Clause|GPL-2.0)&Apache-2.0,Total Licenses unsorted
-"""GPL v3.0 or later, see LICENSE file""",GPL3.0+&See-License-Clause,License not present in License List
-"""GPLv3 / Biopython license""",(GPL-3.0|UNKNOWN)),
-"""GPLv3 or 3-Clause BSD""",(BSD-3-Clause|GPL-3.0 ),License not present in License List
-"""ISCL (see LICENSE.txt)""",ISC& See-License-Clause,License not present in License List
-"""LGPL-2.1-or-later OR EPL-2.0""",(EPL-2.0|LGPL-2.1+)  ,License not present in License List
-"""LGPL 3, EUPL 1.2""", EUPL-1.2&LGPL-3.0,License not present in License List
-"""LGPL for module; GPL for example apps""",GPL-UNSPECIFIED&LGPL,License not present in License List
+Input_Old_Format,Input_Old_Format,License_Checker_Message,Failure Location
+"""GPLv3 / Biopython license""",(((GPL-3.0|UNKNOWN))))(((AGPL-UNSPECIFIED-COMMERCIAL))),More than one brace present either at the starting or ending,(((GPL-3.0|UNKNOWN)
+"""CPAL""",CPALUNSPECIFIED,License not present in License List,CPALUNSPECIFIED
+"""Creative Common attribnution-Noncommercial-Share Alike license""",CC-BY-NC-SA-UNSPCIFIED,License not present in License List,CC-BY-NC-SA-UNSPCIFIED
+"""Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License""",CC-BY-NC-SA-4.1,License not present in License List,CC-BY-NC-SA-4.1
+"""Creative Commons BY 3.0""",CC-BY-30,License not present in License List,CC-BY-30
+"""D892FC""",Nonsensical-ClausE,License not present in License List,Nonsensical-ClausE
+"""Default license AGPL and TriaClick Open Source License Agreement""","AGPL-UNSPECIFIED,UNKNOWN",License not present in License List,"AGPL-UNSPECIFIED,UNKNOWN"
+"""Distributed under terms of the AGPL license.""",AGPLUNSPECIFIED,License not present in License List,AGPLUNSPECIFIED
+"""Dual: Commercial or AGPL""",(AGPL-UNSPECIFIED-COMMERCIAL)))),More than one brace present either at the starting or ending,)))
+"""dual-licensed, under the Universal Permissive License (UPL) and Apache License 2.0""",Apache-2.0-UPL-UNSPECIFIED,License not present in License List,Apache-2.0-UPL-UNSPECIFIED
+"""FTL/LGPL v2.1+""","(((FTL,LGPL2.1+)",More than one brace present either at the starting or ending,"(((FTL,LGPL2.1+)"
+"""GNU GENERAL PUBLIC LICENSE, see LICENCE""",GPL-UNSPECIFIED|See-License-Clause),Brackets should be enclosed at both ends for pipe(|) separator,GPL-UNSPECIFIED|See-License-Clause)
+"""GNU General Public License v3 (GPLv3) on top the license of Python.""",{GPL-3.0&Python-UNSPECIFIED),Brackets-() are not allowed when licenses are separated by &,{GPL-3.0&Python-UNSPECIFIED)
+"""GNU General Public License v3 (LGPLv3)""","GPL-3.0&,LGPL-3.0",License not present in License List,",LGPL-3.0"
+"""GNU General Public License version 3 or later, Apache License Version 2""",(Apache-2.0&GPL-3.0+),Brackets-() are not allowed when licenses are separated by &,(Apache-2.0&GPL-3.0+)
+"""GNU_GPL licence, see LICENCE.txt""",(GPL-UNSPECIFIED-See-License-Clause),License not present in Approved License List,GPL-UNSPECIFIED-See-License-Clause
+"""GNU GPL; see LICENSE""",GPL-UNSPECIFIED|See-License-Clause,Brackets should be enclosed at both ends for pipe(|) separator,GPL-UNSPECIFIED|See-License-Clause
+"""GNU GPLv3 or posterior""",(GPL-3.0--UNKNOWN),License not present in Approved License List,GPL-3.0--UNKNOWN
+"""GNU(https://www.gnu.org/licenses/lgpl-2.1.txt)""","LGPL-2.1,",License not present in License List,"LGPL-2.1,"
+"""GNU LESSER GENERAL PUBLIC LICENSE v3, see LICENSE file""",LGPL-3.0&See-LicenseClause,License not present in License List,See-LicenseClause
+"""GPL-2.0-only OR LGPL-2.0-or-later""",(GPL-2.0-LGPL-2.0+),License not present in Approved License List,GPL-2.0-LGPL-2.0+
+"""GPL-2.0-only OR LGPL-2.1-or-later""",(GPL-2.0&LGPL-2.1+),Brackets-() are not allowed when licenses are separated by &,(GPL-2.0&LGPL-2.1+)
+"""GPL2,GPL3,Commercial""",COMMERCIAL&GPL-2.0|GPL-3.0,Brackets should be enclosed at both ends for pipe(|) separator,COMMERCIAL&GPL-2.0|GPL-3.0
+"""GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0""",GPL-3.0+&Apache-2.0&CC0-1.0&CC-BY-SA-4.0,Alphabetical order not followed,GPL-3.0+&Apache-2.0&CC0-1.0&CC-BY-SA-4.0
+"""['GPL3', 'LGPL']""",LGPL-UNSPECIFIED&GPL-3.0,Alphabetical order not followed,LGPL-UNSPECIFIED&GPL-3.0
+"""GPL,MIT,BSD""",(BSD-UNSPECIFIED&GPL-UNSPECIFIED&MIT,Brackets-() are not allowed when licenses are separated by &,(BSD-UNSPECIFIED&GPL-UNSPECIFIED&MIT
+"""GPL/Proprietary""",(GPL-UNSPECIFIED|Proprietary-Clause,Brackets should be enclosed at both ends for pipe(|) separator,(GPL-UNSPECIFIED|Proprietary-Clause
+"""GPL -  see LICENSE""",GPL-UNSPECIFIED\See-License-Clause,License not present in License List,GPL-UNSPECIFIED\See-License-Clause
+"""GPL see LICENSE""",GPL-UNSPECIFIEDSee-License-Clause,License not present in License List,GPL-UNSPECIFIEDSee-License-Clause
+"""GPLv2 (Only)/BSD (2 Clause)""",(BSD-2-Clause|GPL-2.0)&Apache-2.0,Alphabetical order not followed,(BSD-2-Clause|GPL-2.0)&Apache-2.0
+"""GPL v3.0 or later, see LICENSE file""",GPL3.0+&See-License-Clause,License not present in License List,GPL3.0+
+"""GPLv3 or 3-Clause BSD""",(BSD-3-Clause|GPL-3.0 ),License not present in Approved License List,GPL-3.0 
+"""ISCL (see LICENSE.txt)""",ISC& See-License-Clause,License not present in License List, See-License-Clause
+"""LGPL-2.1-or-later OR EPL-2.0""",(EPL-2.0|LGPL-2.1+)  ,License not present in License List,  
+"""LGPL 3, EUPL 1.2""", EUPL-1.2&LGPL-3.0,License not present in License List, EUPL-1.2
+"""LGPL for module; GPL for example apps""",GPL-UNSPECIFIED&LGPL,License not present in License List,LGPL

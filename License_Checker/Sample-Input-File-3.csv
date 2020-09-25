@@ -1,3 +1,4 @@
+"""GPLv3 / Biopython license""",(((GPL-3.0|UNKNOWN))))(((AGPL-UNSPECIFIED-COMMERCIAL)))
 """CPAL""",CPALUNSPECIFIED
 """Creative Common attribnution-Noncommercial-Share Alike license""",CC-BY-NC-SA-UNSPCIFIED
 """Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License""",CC-BY-NC-SA-4.1
@@ -5,9 +6,9 @@
 """D892FC""",Nonsensical-ClausE
 """Default license AGPL and TriaClick Open Source License Agreement""","AGPL-UNSPECIFIED,UNKNOWN"
 """Distributed under terms of the AGPL license.""",AGPLUNSPECIFIED
-"""Dual: Commercial or AGPL""",(AGPL-UNSPECIFIED-COMMERCIAL)
+"""Dual: Commercial or AGPL""",(AGPL-UNSPECIFIED-COMMERCIAL))))
 """dual-licensed, under the Universal Permissive License (UPL) and Apache License 2.0""",Apache-2.0-UPL-UNSPECIFIED
-"""FTL/LGPL v2.1+""","(FTL,LGPL2.1+)"
+"""FTL/LGPL v2.1+""","(((FTL,LGPL2.1+)"
 """GNU GENERAL PUBLIC LICENSE, see LICENCE""",GPL-UNSPECIFIED|See-License-Clause)
 """GNU General Public License v3 (GPLv3) on top the license of Python.""",{GPL-3.0&Python-UNSPECIFIED)
 """GNU General Public License v3 (LGPLv3)""","GPL-3.0&,LGPL-3.0"
@@ -28,7 +29,6 @@
 """GPL see LICENSE""",GPL-UNSPECIFIEDSee-License-Clause
 """GPLv2 (Only)/BSD (2 Clause)""",(BSD-2-Clause|GPL-2.0)&Apache-2.0
 """GPL v3.0 or later, see LICENSE file""",GPL3.0+&See-License-Clause
-"""GPLv3 / Biopython license""",(GPL-3.0|UNKNOWN))
 """GPLv3 or 3-Clause BSD""",(BSD-3-Clause|GPL-3.0 )
 """ISCL (see LICENSE.txt)""",ISC& See-License-Clause
 """LGPL-2.1-or-later OR EPL-2.0""",(EPL-2.0|LGPL-2.1+)  
