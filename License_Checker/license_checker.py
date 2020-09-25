@@ -5,6 +5,7 @@ import re
 import os
 import traceback
 import sys
+import cowsay
 
 
 class License_Checker:
@@ -12,21 +13,22 @@ class License_Checker:
     @staticmethod
     def read_input_file():
         try:
-            # input_file = input('Enter the input file name with full path :')
-            # input_row_no = input('Enter the column no to work on:')
-            # valid_licenses_file_path = input('Enter the valid licenses file name with full path :')
-            # valid_licenses_row_no = input('Enter the column no to work on:')
-            input_file = "D:\Miscellaneous_Scripts\License_Checker\Sample-Input-File-3.csv"
-            input_row_no = "2"
-            valid_licenses_file_path = "D:\Miscellaneous_Scripts\License_Checker\Approved-List-of-Licenses.csv"
-            valid_licenses_row_no = "1"
+            cowsay.cow("Welcome to License Checker")
+            input_file = input('Enter the input file name with full path :\n')
+            input_row_no = input('Enter the column no to work on:\n')
+            valid_licenses_file = input('Enter the valid licenses file name with full path :\n')
+            valid_licenses_row_no = input('Enter the column no to work on:\n')
+            # input_file = "D:\Miscellaneous_Scripts\License_Checker\Sample-Input-File-3.tsv"
+            # input_row_no = "2"
+            # valid_licenses_file = "D:\Miscellaneous_Scripts\License_Checker\Approved-List.tsv"
+            # valid_licenses_row_no = "1"
             valid_licenses_list = []
 
-            with open(valid_licenses_file_path, 'r') as read_obj_valid_licenses:
-                if os.path.splitext(ntpath.basename(input_file))[1] == '.csv':
+            with open(valid_licenses_file, 'r', newline="") as read_obj_valid_licenses:
+                if os.path.splitext(ntpath.basename(valid_licenses_file))[1] == '.csv':
                     csv_tsv_reader_valid_licenses = reader(read_obj_valid_licenses)
-                elif os.path.splitext(ntpath.basename(input_file))[1] == '.tsv':
-                    csv_tsv_reader_valid_licenses = reader(read_obj_valid_licenses, '\t')
+                elif os.path.splitext(ntpath.basename(valid_licenses_file))[1] == '.tsv':
+                    csv_tsv_reader_valid_licenses = reader(read_obj_valid_licenses, delimiter='\t')
                 for each_valid_license in csv_tsv_reader_valid_licenses:
                     valid_licenses_list.append(each_valid_license[int(valid_licenses_row_no)-1])
 
@@ -52,9 +54,9 @@ class License_Checker:
                     header_row = ['Input', 'Output', 'License_Checker_Message', 'Failure Location']
                     csv_tsv_writer_file.writerow(header_row)
                 else:
-                    csv_tsv_reader_file = reader(read_obj_input_file, '\t')
-                    csv_tsv_writer_file = writer(write_obj_output_file, '\t')
-                    header_row = ['Input_Old_Format', 'Input_Old_Format', 'License_Checker_Message', 'Failure Location']
+                    csv_tsv_reader_file = reader(read_obj_input_file, delimiter='\t')
+                    csv_tsv_writer_file = writer(write_obj_output_file, delimiter='\t')
+                    header_row = ['Input', 'Output', 'License_Checker_Message', 'Failure Location']
                     csv_tsv_writer_file.writerow(header_row)
 
                 for each_input in csv_tsv_reader_file:
@@ -67,13 +69,13 @@ class License_Checker:
                     for each_str in list_without_empty_strings:
 
                         if '&' in each_str and ('(' in each_str or ')' in each_str):
-                            print('Brackets () present in & separators')
+                            # print('Brackets () present in & separators')
                             error_msg = 'Brackets-() are not allowed when licenses are separated by &'
                             error_location = each_str
                             break
 
                         elif '|' in each_str and ('(' not in each_str or ')' not in each_str):
-                            print('Brackets () not present in| separator')
+                            # print('Brackets () not present in| separator')
                             error_msg = 'Brackets should be enclosed at both ends for pipe(|) separator'
                             error_location = each_str
                             break
@@ -93,7 +95,7 @@ class License_Checker:
                                     licenses_and_without_chars.append(elem)
                                 else:
                                     error_msg = 'License not present in License List'
-                                    print('License not present in Approved License List')
+                                    # print('License not present in Approved License List')
                                     error_location = elem
                                     break
 
@@ -101,7 +103,7 @@ class License_Checker:
                             licenses_and_without_chars.sort()
 
                             if licenses_and_without_chars != licenses_and_without_chars_unsorted:
-                                print('Inner and list not sorted')
+                                # print('Inner and list not sorted')
                                 error_msg = 'Alphabetical order not followed'
                                 error_location = each_str
                                 break
@@ -119,7 +121,7 @@ class License_Checker:
                                     licenses_or_without_chars.append(elem)
                                 else:
                                     error_msg = 'License not present in Approved License List'
-                                    print('License not present in Approved License List')
+                                    # print('License not present in Approved License List')
                                     error_location = elem
                                     break
 
@@ -128,7 +130,7 @@ class License_Checker:
 
                             if licenses_or_without_chars != licenses_or_without_chars_unsorted:
                                 error_msg = 'Alphabetical order not followed'
-                                print('Alphabetical order not followed')
+                                # print('Alphabetical order not followed')
                                 error_location = each_str
                                 break
                             else:
@@ -138,7 +140,7 @@ class License_Checker:
                     licenses_list.sort()
 
                     if licenses_list != licenses_list_unsorted:
-                        print('Alphabetical order not followed')
+                        # print('Alphabetical order not followed')
                         error_msg = 'Alphabetical order not followed'
                         error_location = each_input[int(input_row_no)-1]
 
@@ -147,7 +149,7 @@ class License_Checker:
                     output_row.append(error_msg)
                     output_row.append(error_location)
                     csv_tsv_writer_file.writerow(output_row)
-
+                print("License Checker output written to output.csv/output.tsv")
                 read_obj_input_file.close()
                 read_obj_valid_licenses.close()
                 write_obj_output_file.close()
