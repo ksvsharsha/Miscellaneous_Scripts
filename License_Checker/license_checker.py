@@ -148,7 +148,7 @@ class License_Checker:
                     output_row.append(error_msg)
                     output_row.append(error_location)
                     csv_tsv_writer_file.writerow(output_row)
-                print("License Checker output written to output.csv/output.tsv")
+                print(f"License Checker output written to {output_file}")
                 read_obj_input_file.close()
                 read_obj_valid_licenses.close()
                 write_obj_output_file.close()
