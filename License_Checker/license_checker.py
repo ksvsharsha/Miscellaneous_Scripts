@@ -9,28 +9,27 @@ import cowsay
 
 
 class License_Checker:
-
     @staticmethod
     def read_input_file():
         try:
             cowsay.cow("Welcome to License Checker")
-            input_file = input('Enter the input file name with full path :\n')
+            input_file = r"{}".format(input('Enter the input file name with full path :\n'))
             input_row_no = input('Enter the column no to work on:\n')
-            valid_licenses_file = input('Enter the valid licenses file name with full path :\n')
+            valid_licenses_file = r"{}".format(input('Enter the valid licenses file name with full path :\n'))
             valid_licenses_row_no = input('Enter the column no to work on:\n')
-            # input_file = "D:\Miscellaneous_Scripts\License_Checker\Sample-Input-File-3.tsv"
+            # input_file = r"C:\Users\admin\Downloads\Input.tsv"
             # input_row_no = "2"
-            # valid_licenses_file = "D:\Miscellaneous_Scripts\License_Checker\Approved-List.tsv"
+            # valid_licenses_file = r"C:\Users\admin\Downloads\Approved-List-1.tsv"
             # valid_licenses_row_no = "1"
             valid_licenses_list = []
 
-            with open(valid_licenses_file, 'r', newline="") as read_obj_valid_licenses:
+            with open(valid_licenses_file, 'r', encoding="utf8", newline="") as read_obj_valid_licenses:
                 if os.path.splitext(ntpath.basename(valid_licenses_file))[1] == '.csv':
                     csv_tsv_reader_valid_licenses = reader(read_obj_valid_licenses)
                 elif os.path.splitext(ntpath.basename(valid_licenses_file))[1] == '.tsv':
                     csv_tsv_reader_valid_licenses = reader(read_obj_valid_licenses, delimiter='\t')
                 for each_valid_license in csv_tsv_reader_valid_licenses:
-                    valid_licenses_list.append(each_valid_license[int(valid_licenses_row_no)-1])
+                    valid_licenses_list.append(each_valid_license[int(valid_licenses_row_no) - 1])
 
             input_file_path = ntpath.split(input_file)[0]
             input_file_ext = os.path.splitext(ntpath.basename(input_file))[1]
@@ -46,8 +45,8 @@ class License_Checker:
                 if os.path.exists(output_file):
                     os.remove(output_file)
 
-            with open(input_file, 'r') as read_obj_input_file, \
-                    open(output_file, 'w', newline='') as write_obj_output_file:
+            with open(input_file, 'r', encoding="utf8") as read_obj_input_file, \
+                    open(output_file, 'w', newline='', encoding="utf8") as write_obj_output_file:
                 if is_csv:
                     csv_tsv_reader_file = reader(read_obj_input_file)
                     csv_tsv_writer_file = writer(write_obj_output_file)
@@ -64,7 +63,7 @@ class License_Checker:
                     error_location = ''
                     licenses_list = []
                     licenses_list_unsorted = []
-                    str_list = re.split(r'(.*?)(\(.*?\))', each_input[int(input_row_no)-1])
+                    str_list = re.split(r'(.*?)(\(.*?\))', each_input[int(input_row_no) - 1])
                     list_without_empty_strings = list(filter(None, str_list))
                     for each_str in list_without_empty_strings:
 
@@ -142,7 +141,7 @@ class License_Checker:
                     if licenses_list != licenses_list_unsorted:
                         # print('Alphabetical order not followed')
                         error_msg = 'Alphabetical order not followed'
-                        error_location = each_input[int(input_row_no)-1]
+                        error_location = each_input[int(input_row_no) - 1]
 
                     output_row = []
                     output_row.extend(each_input)
